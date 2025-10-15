@@ -1,15 +1,60 @@
-<!--
----
-name: Remote MCP with Azure Functions (Python)
-description: Run a remote MCP server on Azure functions.  
-page_type: sample
-languages:
-- python
-- bicep
-- azdeveloper
-products:
-- azure-functions
-- azure
-urlFragment: build-custom-tool-with-code-python
----
--->
+# Remote MCP Server with Azure Functions (Python)
+
+A Model Context Protocol (MCP) server running on Azure Functions that provides custom tools and capabilities.
+
+## Quick Start
+
+### 1. Deploy to Azure
+
+```bash
+azd up
+```
+
+This command will provision Azure resources and deploy your function app.
+
+### 2. Get MCP Configuration Values
+
+After deployment, retrieve the required configuration:
+
+**Remote MCP endpoint:**
+
+Your MCP remote URL will be: `https://<FUNCTION_APP_NAME>.azurewebsites.net/runtime/webhooks/mcp`.
+
+You can obtain `FUNCTION_APP_NAME` by running the following command:
+
+```bash
+azd env get-values | grep AZURE_FUNCTION_APP_NAME
+
+```
+
+**System Key for Authentication:**
+
+You can obtain the `mcp_extension` system key by running the following command:
+
+```bash
+az functionapp keys list --name <FUNCTION_APP_NAME> --resource-group <RESOURCE_GROUP> --query systemKeys.mcp_extension --output tsv
+```
+
+### 3. Configure MCP Client
+
+Starting the `remote-hellow-world` MCP server in `./.vscode/mcp.json` will prompt you to provide:
+
+- App name (your Azure Function app name)
+- `mcp_extension` key
+
+No need to construct the remote URL manually.
+
+## Development
+
+**Local Development:**
+
+```bash
+cd src
+func start
+```
+
+**Redeploy after changes:**
+
+```bash
+azd deploy
+```
