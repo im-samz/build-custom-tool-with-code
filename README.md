@@ -2,6 +2,9 @@
 
 A Model Context Protocol (MCP) server running on Azure Functions that provides custom tools and capabilities.
 
+> [!TIP]
+> You can refer to [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) for detailed getting started instructions.
+
 ## Quick Start
 
 ### 1. Deploy to Azure
@@ -37,7 +40,7 @@ az functionapp keys list --name <FUNCTION_APP_NAME> --resource-group <RESOURCE_G
 
 ### 3. Configure MCP Client
 
-Starting the `remote-hellow-world` MCP server in `./.vscode/mcp.json` will prompt you to provide:
+Starting the `remote-hello-world` MCP server in `./.vscode/mcp.json` will prompt you to provide:
 
 - App name (your Azure Function app name)
 - `mcp_extension` key
