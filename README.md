@@ -21,7 +21,20 @@ To use this sample locally on your machine:
    code .
    ```
 
-3. Set up environment variables:
+3. Sign in to Azure and initialize azd:
+
+   ```bash
+   az login
+   azd auth login
+   ```
+
+4. Create a new azd project environment, specifying a location (westus2 is recommended), the subscription ID you want to use, and a name for the environment:
+
+   ```bash
+   azd env new {ENVIRONMENT_NAME} --location westus2 --subscription {SUBSCRIPTION_ID}
+   ```
+
+5. Set up environment variables:
 
    ```bash
    azd env set {VARIABLE}
