@@ -1,10 +1,10 @@
 {
 	"servers": {
-		"local-hello-world": {
+		"local-tool-server": {
 			"type": "http",
 			"url": "http://0.0.0.0:7071/runtime/webhooks/mcp"
 		},
-		"remote-hello-world": {
+		"remote-tool-server": {
 			"url": "https://${input:functionapp-name}.azurewebsites.net/runtime/webhooks/mcp",
 			"type": "http",
 			"headers": {
