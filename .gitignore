@@ -1,4 +1,4 @@
-# Foundry Agent Stuff
+# Experimental files to run Foundry agent
 pyproject.toml
 requirements.txt
 run_agent.py
