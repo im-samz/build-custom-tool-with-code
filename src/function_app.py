@@ -1,3 +1,4 @@
+# Use beta library to clean up the MCP tool decorator
 from azurefunctions.extensions.mcp import McpApp, MCPToolContext
 from typing import Annotated
 
